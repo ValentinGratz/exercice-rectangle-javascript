@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Canvas mélangé</title>
+	</head>
+	<body>
+		<center>
+			<h1>Utilisation du canva en Javascript</h1>
+			<!-- défini un canvas avec une bordure de 1px -->
+			<canvas id="plane" style="border: 1px solid #AF3"></canvas>
+		</center>
+
+		<script>
+			
+			var largeur = 700, hauteur = 500;
+
+			var monCanvas = document.getElementById('plane'); // récupére le canvas par son id
+			var context= monCanvas.getContext('2d'); // utilise le contexte 2D
+
+			monCanvas.width = largeur;
+			monCanvas.height = hauteur;
+
+			setInterval(test,1000/10);
+
+			var x = 50, direct= 10;
+
+			function test() {
+
+				context.fillStyle = 'rgba(250, 226, 180, 0.18)';
+				context.fillRect(0,0,largeur,hauteur);
+
+				context.fillStyle = 'blue';
+				//context.fillRect(x, 100,150,200);
+				context.beginPath();
+				context.arc(x,150,75,0,2*Math.PI);
+				context.fill();
+
+				x += direct;
+
+				if ( x > largeur - 75) { direct = -10}
+				if ( x < 75) { direct = 10}
+			}
+
+		// variables
+		// var direct = {'X' : 0, 'Y': 0};
+
+		//content.fillStyle = 'red';
+
+		//context.beginPath();
+		//context.moveTo(400,200);
+		//context.lineTo(400,300);
+		//context.lineTo(350,450);
+		//context.lineTo(200,100);
+		//context.closePath();
+		//context.fill();
+		//context.stroke();
+		////
+		//context.fillStyle = 'yellow';
+		//context.beginPath();
+		//context.moveTo(20,20);
+		//context.bezierCurveTo(20, 50, 300, 100, 20, 20);
+		//context.fill();
+		//
+		//context.fillstyle= "orange";
+		//context.beginPath();
+		//congtact.arc(550,300,100,1,1.5*Math.PI,true);
+		//context.stroke();
+		//
+		//context.fillStyle= "black";
+		//context.beginPath();
+		//context.ellipse(400,400,100,50,0,0,2*Math.PI)
+		//context.fill();
+		//
+		</script>
+		<script>
+			
+			var largeur = 700, hauteur = 500;
+
+			var monCanvas = document.getElementById('plane'); // récupére le canvas par son id
+			var context= monCanvas.getContext('2d'); // utilise le contexte 2D
+
+			monCanvas.width = largeur;
+			monCanvas.height = hauteur;
+
+			setInterval(test,1000/10);
+
+			var x = 50, direct= 10;
+			var y = 50, directy= 10;
+
+			function test() {
+
+				context.fillStyle = 'rgba(250, 226, 180, 0.18)';
+				context.fillRect(0,0,largeur,hauteur);
+
+				context.fillStyle = 'blue';
+				//context.fillRect(y, 100,150,200);
+				context.beginPath();
+				context.arc(x,y,75,0,2*Math.PI);
+				context.fill();
+
+				y += directy;
+
+				if ( y > largeur - 75) { directy = -10}
+				if ( y < 75) { directy = 10}
+			}
+
+		// variables
+		// var direct = {'X' : 0, 'Y': 0};
+
+		//content.fillStyle = 'red';
+
+		//context.beginPath();
+		//context.moveTo(400,200);
+		//context.lineTo(400,300);
+		//context.lineTo(350,450);
+		//context.lineTo(200,100);
+		//context.closePath();
+		//context.fill();
+		//context.stroke();
+		////
+		//context.fillStyle = 'yellow';
+		//context.beginPath();
+		//context.moveTo(20,20);
+		//context.bezierCurveTo(20, 50, 300, 100, 20, 20);
+		//context.fill();
+		//
+		//context.fillstyle= "orange";
+		//context.beginPath();
+		//congtact.arc(550,300,100,1,1.5*Math.PI,true);
+		//context.stroke();
+		//
+		//context.fillStyle= "black";
+		//context.beginPath();
+		//context.ellipse(400,400,100,50,0,0,2*Math.PI)
+		//context.fill();
+		//
+		</script>
+	</body>
+</html>
